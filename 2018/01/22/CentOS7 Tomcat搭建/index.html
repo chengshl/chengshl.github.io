@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="环境," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="安装wget程序  1yum -y install wget  备份原镜像文件  1mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup  下载新的CentOS-Base.repo 到/etc/yum.repos.d/  1wget -O /etc/yum.repos.d/CentOS-Base">
+<meta name="description" content="首先下载jdk和Tomcat   jdk：http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html tomcat： https://tomcat.apache.org/download-90.cgi 选择要下载的版本后，使用wget命令下载到服务器  12wget http://down">
+<meta name="keywords" content="环境">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CentOS7 更换阿里源">
-<meta property="og:url" content="http://yoursite.com/2018/01/21/CentOS7 更换阿里源/index.html">
+<meta property="og:title" content="CentOS7 Tomcat搭建">
+<meta property="og:url" content="http://yoursite.com/2018/01/22/CentOS7 Tomcat搭建/index.html">
 <meta property="og:site_name" content="Once">
-<meta property="og:description" content="安装wget程序  1yum -y install wget  备份原镜像文件  1mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup  下载新的CentOS-Base.repo 到/etc/yum.repos.d/  1wget -O /etc/yum.repos.d/CentOS-Base">
+<meta property="og:description" content="首先下载jdk和Tomcat   jdk：http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html tomcat： https://tomcat.apache.org/download-90.cgi 选择要下载的版本后，使用wget命令下载到服务器  12wget http://down">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-21T18:08:59.701Z">
+<meta property="og:updated_time" content="2018-01-22T03:10:12.284Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CentOS7 更换阿里源">
-<meta name="twitter:description" content="安装wget程序  1yum -y install wget  备份原镜像文件  1mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup  下载新的CentOS-Base.repo 到/etc/yum.repos.d/  1wget -O /etc/yum.repos.d/CentOS-Base">
+<meta name="twitter:title" content="CentOS7 Tomcat搭建">
+<meta name="twitter:description" content="首先下载jdk和Tomcat   jdk：http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html tomcat： https://tomcat.apache.org/download-90.cgi 选择要下载的版本后，使用wget命令下载到服务器  12wget http://down">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/21/CentOS7 更换阿里源/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/22/CentOS7 Tomcat搭建/"/>
 
 
 
 
 
-  <title>CentOS7 更换阿里源 | Once</title>
+  <title>CentOS7 Tomcat搭建 | Once</title>
   
 
 
@@ -262,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/21/CentOS7 更换阿里源/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/22/CentOS7 Tomcat搭建/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Once">
@@ -279,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CentOS7 更换阿里源</h1>
+          <h1 class="post-title" itemprop="name headline">CentOS7 Tomcat搭建</h1>
         
 
         <div class="post-meta">
@@ -291,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-21T21:51:23+08:00">
-                2018-01-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-22T01:04:28+08:00">
+                2018-01-22
               </time>
             
 
@@ -332,8 +333,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/21/CentOS7 更换阿里源/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/21/CentOS7 更换阿里源/" itemprop="commentCount"></span>
+                <a href="/2018/01/22/CentOS7 Tomcat搭建/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/22/CentOS7 Tomcat搭建/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -362,21 +363,52 @@
 
       
         <ol>
-<li>安装wget程序</li>
+<li>首先下载jdk和Tomcat</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>jdk：<a href="jdk下载">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p>
+<p>tomcat： <a href="Tomcat下载/">https://tomcat.apache.org/download-90.cgi</a></p>
+<p>选择要下载的版本后，使用wget命令下载到服务器</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.tar.gz?AuthParam=1516588696_2e9371b9c1b70efeb120b3d1fd1f46ec -O jdk-8u161-linux-x64.tar.gz</span><br><span class="line">wget http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.2/bin/apache-tomcat-9.0.2.tar.gz</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>PS：由于jdk每次下载都需进行验证，因此如果需要下载需手动去页面点击下载后获取下载链接，然后用-O参数指定下载文件的名称</p>
+</blockquote>
 <ol>
-<li>备份原镜像文件</li>
+<li>解压到/usr/local/目录下（该目录为Linux操作系统默认程序安装路径，类似与Windows的“Program Files”）</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-tomcat-9.0.2.tar.gz -C /usr/local/</span><br><span class="line">tar -zxvf jdk-8u161-linux-x64.tar.gz -C /usr/local/</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>PS：由于获取的jdk下载链接含有其他参数，可以在下载时</p>
+</blockquote>
 <ol>
-<li>下载新的CentOS-Base.repo 到/etc/yum.repos.d/</li>
+<li>Java环境配置环境变量</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/jdk1.8.0_161</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>PS：一般新增的环境变量都方在/etc/profile文件最后</p>
+</blockquote>
 <ol>
-<li>运行yum makecache生成缓存</li>
+<li>使环境变量生效</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum clean all</span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+<ol>
+<li>添加自启所需环境变量（自启的时候全局环境变量没生效）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /usr/local/apache-tomcat-9.0.2/bin/catalina.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/jdk1.8.0_161/</span><br><span class="line">export JRE_HOME=/usr/local/jdk1.8.0_161/jre/</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>PS：这两条环境变量应该放在#!/bin/sh下面，在脚本运行一开始就进行读取</p>
+</blockquote>
+<p>6.配置tomcat服务（CentOS7专有）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /lib/systemd/system/tomcat.service</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=tomcat</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/usr/local/apache-tomcat-9.0.2/bin/startup.sh</span><br><span class="line">ExecStop=/usr/local/apache-tomcat-9.0.2/bin/shutdown.sh</span><br><span class="line">PrivateTmp=true</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<ol>
+<li>设置服务自启动（开机自动运行）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable tomcat.service</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">开启服务：systemctl start tomcat.service</span><br><span class="line">停止服务：systemctl stop tomcat.service</span><br><span class="line">重启服务：systemctl restart tomcat.service</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -392,6 +424,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/环境/" rel="tag"># 环境</a>
+          
+        </div>
+      
 
       
       
@@ -401,14 +439,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/01/21/CentOS7 更换阿里源/" rel="next" title="CentOS7 更换阿里源">
+                <i class="fa fa-chevron-left"></i> CentOS7 更换阿里源
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/22/CentOS7 Tomcat搭建/" rel="prev" title="CentOS7 Tomcat搭建">
-                CentOS7 Tomcat搭建 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/22/CentOS7 redis安装/" rel="prev" title="CentOS7 redis安装">
+                CentOS7 redis安装 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -440,8 +482,8 @@
 
   
     <div class="comments" id="comments">
-      <div class="ds-thread" data-thread-key="2018/01/21/CentOS7 更换阿里源/"
-           data-title="CentOS7 更换阿里源" data-url="http://yoursite.com/2018/01/21/CentOS7 更换阿里源/">
+      <div class="ds-thread" data-thread-key="2018/01/22/CentOS7 Tomcat搭建/"
+           data-title="CentOS7 Tomcat搭建" data-url="http://yoursite.com/2018/01/22/CentOS7 Tomcat搭建/">
       </div>
     </div>
 

@@ -527,8 +527,11 @@
       
         
           
-            <p>由于CentOS7上没有pip的包，因此直接使用pip的安装命令是安装不了的，需要安装epel后才能正常使用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install epel-release</span><br><span class="line">yum -y install python-pip</span><br><span class="line">yum clean all</span><br></pre></td></tr></table></figure>
+            <ul>
+<li><p>由于CentOS7上没有pip的包，因此直接使用pip的安装命令是安装不了的，需要安装epel后才能正常使用。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install epel-release</span><br><span class="line">yum -y install python-pip</span><br><span class="line">yum clean all</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
           
         
@@ -886,10 +889,11 @@
 </li>
 <li><p>设置服务自启动（开机自动运行）</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable tomcat.service</span><br></pre></td></tr></table></figure>
+<p> 常用命令：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">开启服务：systemctl start tomcat.service</span><br><span class="line">停止服务：systemctl stop tomcat.service</span><br><span class="line">重启服务：systemctl restart tomcat.service</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">开启服务：systemctl start tomcat.service</span><br><span class="line">停止服务：systemctl stop tomcat.service</span><br><span class="line">重启服务：systemctl restart tomcat.service</span><br></pre></td></tr></table></figure>
-</code></pre>
+
           
         
       

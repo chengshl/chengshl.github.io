@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Once">
 <meta property="og:description" content="安装ntpdate工具  1yum -y install ntp  使用命令获取服务器上的时间进行更新  1ntpdate time.nist.gov  设置crontab，使机器能够定时获取到正确的时间  12*/10 * * * * ntpdate time.nist.gov   #域名或IP#每隔十分钟同步一次  推荐几个时间服务器。  123456time.nist.govtime.nu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-21T17:49:37.582Z">
+<meta property="og:updated_time" content="2018-01-22T03:29:55.519Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS7 时间自动更新">
 <meta name="twitter:description" content="安装ntpdate工具  1yum -y install ntp  使用命令获取服务器上的时间进行更新  1ntpdate time.nist.gov  设置crontab，使机器能够定时获取到正确的时间  12*/10 * * * * ntpdate time.nist.gov   #域名或IP#每隔十分钟同步一次  推荐几个时间服务器。  123456time.nist.govtime.nu">
@@ -362,21 +362,19 @@
 
       
         <ol>
-<li>安装ntpdate工具</li>
+<li><p>安装ntpdate工具</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install ntp</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用命令获取服务器上的时间进行更新</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ntpdate time.nist.gov</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置crontab，使机器能够定时获取到正确的时间</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*/10 * * * * ntpdate time.nist.gov   #域名或IP</span><br><span class="line">#每隔十分钟同步一次</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>推荐几个时间服务器。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">time.nist.gov</span><br><span class="line">time.nuri.net</span><br><span class="line">asia.pool.ntp.org</span><br><span class="line">asia.pool.ntp.org</span><br><span class="line">asia.pool.ntp.org</span><br><span class="line">asia.pool.ntp.org</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install ntp</span><br></pre></td></tr></table></figure>
-<ol>
-<li>使用命令获取服务器上的时间进行更新</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ntpdate time.nist.gov</span><br></pre></td></tr></table></figure>
-<ol>
-<li>设置crontab，使机器能够定时获取到正确的时间</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*/10 * * * * ntpdate time.nist.gov   #域名或IP</span><br><span class="line">#每隔十分钟同步一次</span><br></pre></td></tr></table></figure>
-<ol>
-<li>推荐几个时间服务器。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">time.nist.gov</span><br><span class="line">time.nuri.net</span><br><span class="line">asia.pool.ntp.org</span><br><span class="line">asia.pool.ntp.org</span><br><span class="line">asia.pool.ntp.org</span><br><span class="line">asia.pool.ntp.org</span><br></pre></td></tr></table></figure>
 
       
     </div>

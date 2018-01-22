@@ -363,21 +363,19 @@
         
           
             <ol>
-<li>安装ntpdate工具</li>
+<li><p>安装ntpdate工具</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install ntp</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用命令获取服务器上的时间进行更新</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ntpdate time.nist.gov</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置crontab，使机器能够定时获取到正确的时间</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*/10 * * * * ntpdate time.nist.gov   #域名或IP</span><br><span class="line">#每隔十分钟同步一次</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>推荐几个时间服务器。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">time.nist.gov</span><br><span class="line">time.nuri.net</span><br><span class="line">asia.pool.ntp.org</span><br><span class="line">asia.pool.ntp.org</span><br><span class="line">asia.pool.ntp.org</span><br><span class="line">asia.pool.ntp.org</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install ntp</span><br></pre></td></tr></table></figure>
-<ol>
-<li>使用命令获取服务器上的时间进行更新</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ntpdate time.nist.gov</span><br></pre></td></tr></table></figure>
-<ol>
-<li>设置crontab，使机器能够定时获取到正确的时间</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*/10 * * * * ntpdate time.nist.gov   #域名或IP</span><br><span class="line">#每隔十分钟同步一次</span><br></pre></td></tr></table></figure>
-<ol>
-<li>推荐几个时间服务器。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">time.nist.gov</span><br><span class="line">time.nuri.net</span><br><span class="line">asia.pool.ntp.org</span><br><span class="line">asia.pool.ntp.org</span><br><span class="line">asia.pool.ntp.org</span><br><span class="line">asia.pool.ntp.org</span><br></pre></td></tr></table></figure>
 
           
         
@@ -529,7 +527,7 @@
       
         
           
-            <p>由于CentOS7上没有pip的包，因此直接敲出安装pip的命令是无法正常安装的，需要额外安装epel才能正常使用。</p>
+            <p>由于CentOS7上没有pip的包，因此直接使用pip的安装命令是安装不了的，需要安装epel后才能正常使用。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install epel-release</span><br><span class="line">yum -y install python-pip</span><br><span class="line">yum clean all</span><br></pre></td></tr></table></figure>
 
           
@@ -683,25 +681,22 @@
         
           
             <ol>
-<li>下载redis源码</li>
+<li><p>下载redis源码</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-stable.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装编译所需环境包</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install -y gcc-c++</span><br><span class="line">yum install -y tcl</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解压缩源码并进入文件夹</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf redis-stable.tar.gz</span><br><span class="line">cd redis-stable</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编译并安装</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入工具文件夹，安装服务</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd utils/</span><br><span class="line">./install_server.sh</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-stable.tar.gz</span><br></pre></td></tr></table></figure>
-<ol>
-<li>安装编译所需环境包</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install -y gcc-c++</span><br><span class="line">yum install -y tcl</span><br></pre></td></tr></table></figure>
-<ol>
-<li>解压缩源码并进入文件夹</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf redis-stable.tar.gz</span><br><span class="line">cd redis-stable</span><br></pre></td></tr></table></figure>
-<ol>
-<li>编译并安装</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
-<ol>
-<li>进入工具文件夹，安装服务</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd utils/</span><br><span class="line">./install_server.sh</span><br></pre></td></tr></table></figure>
 
           
         
@@ -854,53 +849,47 @@
         
           
             <ol>
-<li>首先下载jdk和Tomcat</li>
-</ol>
+<li><p>首先下载jdk和Tomcat</p>
 <blockquote>
 <p>jdk：<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p>
 <p>tomcat： <a href="https://tomcat.apache.org/download-90.cgi" target="_blank" rel="noopener">https://tomcat.apache.org/download-90.cgi</a></p>
 <p>选择要下载的版本后，使用wget命令下载到服务器</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.tar.gz?AuthParam=1516588696_2e9371b9c1b70efeb120b3d1fd1f46ec -O jdk-8u161-linux-x64.tar.gz</span><br><span class="line">wget http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.2/bin/apache-tomcat-9.0.2.tar.gz</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.tar.gz?AuthParam=1516588696_2e9371b9c1b70efeb120b3d1fd1f46ec -O jdk-8u161-linux-x64.tar.gz</span><br><span class="line">wget http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.2/bin/apache-tomcat-9.0.2.tar.gz</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>PS：由于jdk每次下载都需进行验证，因此如果需要下载需手动去页面点击下载后获取下载链接，然后用-O参数指定下载文件的名称</p>
 </blockquote>
-<ol>
-<li>解压到/usr/local/目录下（该目录为Linux操作系统默认程序安装路径，类似与Windows的“Program Files”）</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-tomcat-9.0.2.tar.gz -C /usr/local/</span><br><span class="line">tar -zxvf jdk-8u161-linux-x64.tar.gz -C /usr/local/</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>PS：由于获取的jdk下载链接含有其他参数，可以在下载时</p>
-</blockquote>
-<ol>
-<li>Java环境配置环境变量</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/jdk1.8.0_161</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解压到/usr/local/目录下（该目录为Linux操作系统默认程序安装路径，类似与Windows的“Program Files”）</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-tomcat-9.0.2.tar.gz -C /usr/local/</span><br><span class="line">tar -zxvf jdk-8u161-linux-x64.tar.gz -C /usr/local/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Java环境配置环境变量</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/jdk1.8.0_161</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>PS：一般新增的环境变量都方在/etc/profile文件最后</p>
 </blockquote>
-<ol>
-<li>使环境变量生效</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
-<ol>
-<li>添加自启所需环境变量（自启的时候全局环境变量没生效）</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /usr/local/apache-tomcat-9.0.2/bin/catalina.sh</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/jdk1.8.0_161/</span><br><span class="line">export JRE_HOME=/usr/local/jdk1.8.0_161/jre/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使环境变量生效</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加自启所需环境变量（自启的时候全局环境变量没生效）</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /usr/local/apache-tomcat-9.0.2/bin/catalina.sh</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/jdk1.8.0_161/</span><br><span class="line">export JRE_HOME=/usr/local/jdk1.8.0_161/jre/</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>PS：这两条环境变量应该放在#!/bin/sh下面，在脚本运行一开始就进行读取</p>
 </blockquote>
-<p>6.配置tomcat服务（CentOS7专有）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /lib/systemd/system/tomcat.service</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=tomcat</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/usr/local/apache-tomcat-9.0.2/bin/startup.sh</span><br><span class="line">ExecStop=/usr/local/apache-tomcat-9.0.2/bin/shutdown.sh</span><br><span class="line">PrivateTmp=true</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
-<ol>
-<li>设置服务自启动（开机自动运行）</li>
+</li>
+<li><p>配置tomcat服务（CentOS7专有）</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /lib/systemd/system/tomcat.service</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=tomcat</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/usr/local/apache-tomcat-9.0.2/bin/startup.sh</span><br><span class="line">ExecStop=/usr/local/apache-tomcat-9.0.2/bin/shutdown.sh</span><br><span class="line">PrivateTmp=true</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置服务自启动（开机自动运行）</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable tomcat.service</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable tomcat.service</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">开启服务：systemctl start tomcat.service</span><br><span class="line">停止服务：systemctl stop tomcat.service</span><br><span class="line">重启服务：systemctl restart tomcat.service</span><br></pre></td></tr></table></figure>
-
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">开启服务：systemctl start tomcat.service</span><br><span class="line">停止服务：systemctl stop tomcat.service</span><br><span class="line">重启服务：systemctl restart tomcat.service</span><br></pre></td></tr></table></figure>
+</code></pre>
           
         
       
@@ -1052,21 +1041,19 @@
         
           
             <ol>
-<li>安装wget程序</li>
+<li><p>安装wget程序</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>备份原镜像文件</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载新的CentOS-Base.repo 到/etc/yum.repos.d/</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行yum makecache生成缓存</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum clean all</span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br></pre></td></tr></table></figure>
-<ol>
-<li>备份原镜像文件</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</span><br></pre></td></tr></table></figure>
-<ol>
-<li>下载新的CentOS-Base.repo 到/etc/yum.repos.d/</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br></pre></td></tr></table></figure>
-<ol>
-<li>运行yum makecache生成缓存</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum clean all</span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
 
           
         

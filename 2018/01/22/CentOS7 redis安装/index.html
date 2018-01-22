@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Once">
 <meta property="og:description" content="下载redis源码  1wget http://download.redis.io/releases/redis-stable.tar.gz  安装编译所需环境包  12yum install -y gcc-c++yum install -y tcl  解压缩源码并进入文件夹  12tar -zxvf redis-stable.tar.gzcd redis-stable  编译并安装  1mak">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-21T17:49:37.579Z">
+<meta property="og:updated_time" content="2018-01-22T03:29:55.089Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS7 redis安装">
 <meta name="twitter:description" content="下载redis源码  1wget http://download.redis.io/releases/redis-stable.tar.gz  安装编译所需环境包  12yum install -y gcc-c++yum install -y tcl  解压缩源码并进入文件夹  12tar -zxvf redis-stable.tar.gzcd redis-stable  编译并安装  1mak">
@@ -362,25 +362,22 @@
 
       
         <ol>
-<li>下载redis源码</li>
+<li><p>下载redis源码</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-stable.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装编译所需环境包</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install -y gcc-c++</span><br><span class="line">yum install -y tcl</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解压缩源码并进入文件夹</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf redis-stable.tar.gz</span><br><span class="line">cd redis-stable</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编译并安装</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入工具文件夹，安装服务</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd utils/</span><br><span class="line">./install_server.sh</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-stable.tar.gz</span><br></pre></td></tr></table></figure>
-<ol>
-<li>安装编译所需环境包</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install -y gcc-c++</span><br><span class="line">yum install -y tcl</span><br></pre></td></tr></table></figure>
-<ol>
-<li>解压缩源码并进入文件夹</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf redis-stable.tar.gz</span><br><span class="line">cd redis-stable</span><br></pre></td></tr></table></figure>
-<ol>
-<li>编译并安装</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
-<ol>
-<li>进入工具文件夹，安装服务</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd utils/</span><br><span class="line">./install_server.sh</span><br></pre></td></tr></table></figure>
 
       
     </div>
